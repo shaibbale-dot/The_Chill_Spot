@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Chill Spot | Premium Lounge</title>
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="#hero" class="logo"><img src="logo.png" alt="Logo" class="nav-logo"></a>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#combo">Deals</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdEYzkCvO0-Eje-gGWxjGFCKhmO0F9OCvMbHh7XofL-_bp8Bg/viewform?usp=dialog"
+                        class="btn" target="_blank">Pre-Book</a></li>
+            </ul>
+        </nav>
+        <div class="menu-dot" onclick="toggleMenu()">⋮</div>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#combo">Deals</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEYzkCvO0-Eje-gGWxjGFCKhmO0F9OCvMbHh7XofL-_bp8Bg/viewform?usp=dialog"
+            target="_blank">Pre-Book</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h2><span class="highlight">The Chill Spot</span><br>Premium Lounge</h2>
+            <p>Book your seat in advance and enjoy a royal, relaxing gala experience.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEYzkCvO0-Eje-gGWxjGFCKhmO0F9OCvMbHh7XofL-_bp8Bg/viewform?usp=dialog"
+                class="btn" target="_blank">Pre-Book Now</a>
+        </div>
+    </section>
+
+    <div class="headline-bar">
+        <div class="headline-track">
+            <span>Pre-Booking & Special Offers — Scan the QR Code & Reserve Your Spot at The Chill Spot! • ONLY 200 Rs
+                for First 30 Customers</span>
+            <span>Pre-Booking & Special Offers — Scan the QR Code & Reserve Your Spot at The Chill Spot! • ONLY 200 Rs
+                for First 30 Customers</span>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="about-grid">
+            <div class="img-box"><img src="ABOUT.png" alt="About"></div>
+            <div>
+                <h2>About The Chill Spot</h2>
+                <p style="text-align:justify;line-height:1.7;">
+                    The Chill Spot is a premium lounge concept developed for the Entrepreneurship Gala 2026,
+                    designed to enhance the overall event experience by combining comfort, convenience,
+                    and quality service in one space. The lounge provides luxury seating, a calm and stylish
+                    ambiance, and dedicated table service, allowing guests to relax without standing in crowds.
+                    Along with food service, The Chill Spot offers entertainment through games and a
+                    photo-friendly environment, making it an ideal place to socialize and unwind. By focusing
+                    on comfort and customer satisfaction, the project transforms a busy gala into a memorable
+                    and enjoyable experience for every visitor.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="cards">
+            <div class="card"><img src="lavashak.jpg" alt="Lava Shak"><span>Lava Shak</span></div>
+            <div class="card"><img src="russian salad.jpg" alt="Russian Salad"><span>Russian Salad</span></div>
+            <div class="card"><img src="spegatti.jpg" alt="Spaghetti"><span>Spaghetti</span></div>
+            <div class="card"><img src="game.png" alt="Games"><span>Games</span></div>
+            <div class="card"><img src="photoboth.png" alt="Photobooth"><span>Photobooth</span></div>
+            <div class="card"><img src="Premium Sitting.jpg" alt="Premium Sitting"><span>Premium Sitting</span></div>
+        </div>
+    </section>
+
+    <!-- COMBO -->
+    <section id="combo" class="combo-blue">
+        <div class="combo-grid">
+            <div class="img-box"><img src="combo deal.png" alt="Combo Deal"></div>
+            <div>
+                <p style="font-size:26px;font-weight:600;color:var(--gold);">Combo Deal & Special Discount</p>
+                <p style="margin:15px 0;line-height:1.7;">
+                    Enjoy our exclusive combo deal that includes all three of our signature food items,
+                    thoughtfully prepared to deliver great taste and satisfaction in a premium lounge environment.
+                    The Chill Spot offers a comfortable and relaxing space where guests can enjoy luxury seating,
+                    calm ambiance, and convenient table-side service throughout the Entrepreneurship Gala.
+                    This combo is perfect for those who want to enjoy quality food without standing in long queues
+                    or moving between stalls. Whether you are visiting with friends or relaxing alone, this deal
+                    provides maximum value, comfort, and convenience in one complete experience.
+                </p>
+                <p style="font-size:22px; display: flex; align-items: center; gap: 15px;">
+                    <del>780 Rs</del> <strong class="price-box">650 Rs</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREBOOK -->
+    <section class="prebook" id="prebook">
+        <div class="prebook-grid">
+            <div class="prebook-text">
+                <h2>Scan QR & Secure Your Spot</h2>
+                <p class="qr-desc">Pay online and confirm your reservation. <br> Scanning the QR code
+                    allows you to bypass the queue and enjoy a seamless entry into The Chill Spot.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEYzkCvO0-Eje-gGWxjGFCKhmO0F9OCvMbHh7XofL-_bp8Bg/viewform?usp=dialog"
+                    class="btn" target="_blank">Pre-Book Seat</a>
+            </div>
+            <div class="qr"><img src="QR.jpeg" alt="QR Code"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>University of Science & Technology</strong></p>
+        <p>Entrepreneurship Gala 2026 — Thursday, 12 Feb 2026 | 10:00 AM</p>
+        <br>
+        <p>For queries contact <strong>Ali Nawaz</strong> (CEO – The Chill Spot)</p>
+        <p>+92 302 299 3010</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('mobileNav');
+            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+        }
+
+        document.addEventListener('click', function (e) {
+            const nav = document.getElementById('mobileNav');
+            const dot = document.querySelector('.menu-dot');
+            if (nav && !nav.contains(e.target) && !dot.contains(e.target)) {
+                nav.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
