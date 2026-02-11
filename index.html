@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Chill Spot | Premium Lounge</title>
+
+    <!-- FONT -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="src/icon.png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="#hero" class="logo"><img src="src/logo.png" alt="Logo" class="nav-logo"></a>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="intro.html" class="nav-members">Members</a></li>
+                <li><a href="https://wa.me/923022993010" class="nav-contact" target="_blank">
+                        <svg viewBox="0 0 24 24" class="nav-whatsapp-icon">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                        </svg> Contact us
+                    </a></li>
+                <li><a href="#combo" class="btn" target="_blank">Pre-Book</a></li>
+            </ul>
+        </nav>
+        <div class="menu-dot" onclick="toggleMenu()">⋮</div>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="intro.html">Members</a>
+        <a href="#combo">Deals</a>
+        <a href="https://wa.me/923022993010" target="_blank" style="display: flex; align-items: center; gap: 8px;">
+            <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: #25d366;">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+            </svg> Contact us
+        </a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">The Chill Spot</h2>
+            <span class="subtitle">Premium Lounge</span>
+
+            <div class="hero-slogan" id="sloganText"></div>
+
+            <p>Book your seat in advance and enjoy<br>a royal, relaxing gala experience.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEYzkCvO0-Eje-gGWxjGFCKhmO0F9OCvMbHh7XofL-_bp8Bg/viewform?usp=dialog"
+                class="btn" target="_blank">Pre-Book Now</a>
+        </div>
+    </section>
+
+    <div class="headline-bar">
+        <div class="headline-track">
+            <span>Pre-Booking & Special Offers — Scan the QR Code & Reserve Your Spot at The Chill Spot! • ONLY 200 Rs
+                for First 30 Customers</span>
+            <span>Pre-Booking & Special Offers — Scan the QR Code & Reserve Your Spot at The Chill Spot! • ONLY 200 Rs
+                for First 30 Customers</span>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="about-grid">
+            <div class="img-box"><img src="src/ABOUT.png" alt="About"></div>
+            <div>
+                <h2>About The Chill Spot</h2>
+                <p style="text-align:justify;line-height:1.7;">
+                    The Chill Spot is a premium lounge concept developed for the Entrepreneurship Gala 2026,
+                    designed to enhance the overall event experience by combining comfort, convenience,
+                    and quality service in one space. The lounge provides luxury seating, a calm and stylish
+                    ambiance, and dedicated table service, allowing guests to relax without standing in crowds.
+                    Along with food service, The Chill Spot offers entertainment through games and a
+                    photo-friendly environment, making it an ideal place to socialize and unwind. By focusing
+                    on comfort and customer satisfaction, the project transforms a busy gala into a memorable
+                    and enjoyable experience for every visitor.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="cards">
+            <div class="card" data-name="Lava Cake" data-price="100">
+                <img src="src/lavashak.jpg" alt="Lava Cake">
+                <span>Lava Shak</span>
+                <p class="card-price">100 Rs</p>
+                <div class="quantity-control">
+                    <button class="qty-btn minus">-</button>
+                    <input type="number" value="1" min="1" class="qty-input">
+                    <button class="qty-btn plus">+</button>
+                </div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="card" data-name="Russian Salad" data-price="190">
+                <img src="src/russian salad.jpg" alt="Russian Salad">
+                <span>Russian Salad</span>
+                <p class="card-price">190 Rs</p>
+                <div class="quantity-control">
+                    <button class="qty-btn minus">-</button>
+                    <input type="number" value="1" min="1" class="qty-input">
+                    <button class="qty-btn plus">+</button>
+                </div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="card" data-name="Spaghetti" data-price="190">
+                <img src="src/spegatti.jpg" alt="Spaghetti">
+                <span>Spaghetti</span>
+                <p class="card-price">190 Rs</p>
+                <div class="quantity-control">
+                    <button class="qty-btn minus">-</button>
+                    <input type="number" value="1" min="1" class="qty-input">
+                    <button class="qty-btn plus">+</button>
+                </div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="card" data-name="Games" data-price="50">
+                <img src="src/game.png" alt="Games">
+                <span>Games</span>
+                <p class="card-price">50 Rs</p>
+                <div class="quantity-control">
+                    <button class="qty-btn minus">-</button>
+                    <input type="number" value="1" min="1" class="qty-input">
+                    <button class="qty-btn plus">+</button>
+                </div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="card" data-name="Photo booth" data-price="0">
+                <img src="src/photoboth.png" alt="Photo booth">
+                <span>Photo booth</span>
+                <p class="card-price">FREE</p>
+                <div class="quantity-control">
+                    <button class="qty-btn minus">-</button>
+                    <input type="number" value="1" min="1" class="qty-input">
+                    <button class="qty-btn plus">+</button>
+                </div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="card" data-name="Premium Sitting" data-price="250">
+                <img src="src/Premium Sitting.jpg" alt="Premium Sitting">
+                <span>Premium Sitting</span>
+                <p class="card-price">250 Rs</p>
+                <div class="quantity-control">
+                    <button class="qty-btn minus">-</button>
+                    <input type="number" value="1" min="1" class="qty-input">
+                    <button class="qty-btn plus">+</button>
+                </div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMBO -->
+    <section id="combo" class="combo-blue">
+        <div class="combo-grid">
+            <div class="img-box"><img src="src/combo deal.png" alt="Combo Deal"></div>
+            <div>
+                <p style="font-size:26px;font-weight:600;color:var(--gold);">Combo Deal & Special Discount</p>
+                <p style="margin:15px 0;line-height:1.7;">
+                    Enjoy our exclusive combo deal that includes all three of our signature food items,
+                    thoughtfully prepared to deliver great taste and satisfaction in a premium lounge environment.
+                    The Chill Spot offers a comfortable and relaxing space where guests can enjoy luxury seating,
+                    calm ambiance, and convenient table-side service throughout the Entrepreneurship Gala.
+                    This combo is perfect for those who want to enjoy quality food without standing in long queues
+                    or moving between stalls. Whether you are visiting with friends or relaxing alone, this deal
+                    provides maximum value, comfort, and convenience in one complete experience.
+                </p>
+                <div class="card" data-name="Combo Deal" data-price="650"
+                    style="padding:0; box-shadow:none; text-align:left; background:transparent;">
+                    <p style="font-size:22px; display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                        <del>780 Rs</del> <strong class="price-box">650 Rs</strong>
+                    </p>
+                    <div class="quantity-control" style="justify-content: flex-start; margin-bottom: 20px;">
+                        <button class="qty-btn minus">-</button>
+                        <input type="number" value="1" min="1" class="qty-input">
+                        <button class="qty-btn plus">+</button>
+                    </div>
+                    <button class="add-to-cart" style="max-width: 200px; border: 2px solid #ffffff;">Add to
+                        Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREBOOK -->
+    <section class="prebook" id="prebook">
+        <div class="pos-card">
+            <div class="pos-header">
+                <h3>The Chill Spot – Order Summary</h3>
+                <div class="pos-table-header">
+                    <span>Item</span>
+                    <span>Qty</span>
+                    <span>Price</span>
+                    <span>Total</span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="pos-body" id="livePOSItems">
+                <p class="empty-msg">No items added yet</p>
+            </div>
+            <div class="pos-footer">
+                <div class="grand-total">
+                    <span>Grand Total</span>
+                    <span id="liveTotal">Rs 0</span>
+                </div>
+            </div>
+
+            <div class="order-form-grid">
+                <form id="orderForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="rollno" name="rollno" placeholder="Roll No" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="department" name="department" placeholder="Department" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="pay-rs" name="pay-rs" placeholder="Pay Rs." readonly>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="WhatsApp Number" required>
+                    </div>
+                    <button type="button" class="btn confirm-btn" id="placeOrderBtn">Confirm Order</button>
+                </form>
+                <div class="qr-preview">
+                    <img src="src/QR.jpeg" alt="QR Code" id="qrImage">
+                </div>
+            </div>
+            <div id="thankYouMessage"
+                style="display:none; text-align:center; margin-top:30px; padding:20px; background:#f0fff0; border:1px solid #cdecde; border-radius:15px; color:#2e7d32;">
+                <h3>Thank You!</h3>
+                <p>Your order has been placed. Redirecting you to WhatsApp now...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INVOICE SECTION -->
+    <section class="invoice-section" id="invoiceSection" style="display: none;">
+        <div class="invoice-container">
+            <div class="invoice-header">
+                <img src="src/logo.png" alt="Logo" class="invoice-logo">
+                <div class="invoice-title">
+                    <h2>OFFICIAL INVOICE</h2>
+                    <p id="invoiceDate"></p>
+                </div>
+            </div>
+            <div class="invoice-details">
+                <div class="client-info">
+                    <p><strong>Billed To:</strong></p>
+                    <p id="inv-name"></p>
+                    <p id="inv-roll"></p>
+                    <p id="inv-dept"></p>
+                    <p id="inv-whatsapp"></p>
+                </div>
+                <div class="order-info">
+                    <p><strong>Order ID:</strong> #<span id="orderId"></span></p>
+                    <p><strong>Status:</strong> <span class="badge">Paid / Reserved</span></p>
+                </div>
+            </div>
+            <table class="invoice-table">
+                <thead>
+                    <tr>
+                        <th>Item Description</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="invoiceItems">
+                    <!-- Items will be inserted here -->
+                </tbody>
+            </table>
+            <div class="invoice-footer">
+                <div class="total-row">
+                    <span>Total Amount Paid:</span>
+                    <strong id="inv-total">0 Rs</strong>
+                </div>
+                <div class="thank-you">
+                    <p>Thank you for choosing The Chill Spot! See you at the Gala.</p>
+                </div>
+            </div>
+            <button class="btn print-btn" onclick="window.print()">Download Invoice</button>
+            <button class="new-order-btn" onclick="resetOrder()">Place New Order</button>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>University of Science & Technology</strong></p>
+        <p>Entrepreneurship Gala 2026 — Thursday, 12 Feb 2026 | 10:00 AM</p>
+        <br>
+        <p>For queries contact <strong>Ali Nawaz</strong> (CEO – The Chill Spot)</p>
+        <p>+92 302 299 3010</p>
+    </footer>
+
+    <a href="https://wa.me/923022993010" class="whatsapp-btn" id="whatsappBtn" target="_blank">
+        <svg viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+        Contact us
+    </a>
+
+    <script>
+        let cart = [];
+
+        // Toggle Mobile Menu
+        function toggleMenu() {
+            const nav = document.getElementById('mobileNav');
+            nav.classList.toggle('active');
+        }
+
+        // Close Mobile Menu on exterior click
+        document.addEventListener('click', function (e) {
+            const nav = document.getElementById('mobileNav');
+            const dot = document.querySelector('.menu-dot');
+            if (nav && !nav.contains(e.target) && !dot.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+
+        // WhatsApp Button Sliding Logic
+        window.addEventListener('scroll', function () {
+            const btn = document.getElementById('whatsappBtn');
+            if (window.scrollY > 300) {
+                btn.classList.add('show');
+            } else {
+                btn.classList.remove('show');
+            }
+        });
+
+        // Quantity Control Logic
+        document.querySelectorAll('.qty-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const input = this.parentElement.querySelector('.qty-input');
+                let value = parseInt(input.value);
+                if (this.classList.contains('plus')) {
+                    input.value = value + 1;
+                } else if (this.classList.contains('minus') && value > 1) {
+                    input.value = value - 1;
+                }
+            });
+        });
+
+        // Add to Cart Logic
+        document.querySelectorAll('.add-to-cart').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const card = this.closest('.card');
+                const name = card.dataset.name;
+                const price = parseInt(card.dataset.price);
+                const qty = parseInt(card.querySelector('.qty-input').value);
+
+                const existingItem = cart.find(item => item.name === name);
+                if (existingItem) {
+                    existingItem.qty += qty;
+                } else {
+                    cart.push({ name, price, qty });
+                }
+
+                updateTotal();
+                updateLivePOS();
+
+                // Visual feedback
+                this.innerText = "Added!";
+                setTimeout(() => this.innerText = "Add to Cart", 1000);
+            });
+        });
+
+        function updateTotal() {
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            const displayTotal = "Rs " + total.toLocaleString();
+
+            // Update both the hidden form field (if it still exists) and the live display
+            const payRsField = document.getElementById('pay-rs');
+            if (payRsField) payRsField.value = displayTotal;
+
+            document.getElementById('liveTotal').innerText = displayTotal;
+        }
+
+        function updateLivePOS() {
+            const liveContainer = document.getElementById('livePOSItems');
+            if (cart.length === 0) {
+                liveContainer.innerHTML = '<p class="empty-msg">No items added yet</p>';
+                return;
+            }
+
+            liveContainer.innerHTML = '';
+            cart.forEach((item, index) => {
+                const subtotal = item.price * item.qty;
+                const row = `
+                    <div class="pos-item-row">
+                        <span>${item.name}</span>
+                        <div class="pos-qty-controls">
+                            <button class="pos-btn" onclick="changeQty(${index}, -1)">-</button>
+                            <span>${item.qty}</span>
+                            <button class="pos-btn" onclick="changeQty(${index}, 1)">+</button>
+                        </div>
+                        <span>${item.price}</span>
+                        <span>${subtotal}</span>
+                        <button class="pos-delete-btn" onclick="removeItem(${index})">🗑️</button>
+                    </div>`;
+                liveContainer.innerHTML += row;
+            });
+        }
+
+        window.changeQty = function (index, delta) {
+            if (cart[index]) {
+                cart[index].qty += delta;
+                if (cart[index].qty < 1) cart[index].qty = 1;
+                updateTotal();
+                updateLivePOS();
+            }
+        };
+
+        window.removeItem = function (index) {
+            cart.splice(index, 1);
+            updateTotal();
+            updateLivePOS();
+        };
+
+        // Place Order Logic
+        document.getElementById('placeOrderBtn').addEventListener('click', function () {
+            const fullName = document.getElementById('name').value;
+            const rollNo = document.getElementById('rollno').value;
+            const dept = document.getElementById('department').value;
+            const whatsappNum = document.getElementById('whatsapp').value;
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+            if (!fullName || !rollNo || !dept || !whatsappNum) {
+                alert("Please fill in all details: Name, Roll No, Department, and WhatsApp Number.");
+                return;
+            }
+
+            if (cart.length === 0) {
+                alert("Please select items from the menu first.");
+                return;
+            }
+
+            const orderId = Math.floor(100000 + Math.random() * 900000);
+
+            // Format WhatsApp Message (Restoring Line Breaks)
+            let messageOrderList = "";
+            cart.forEach(item => {
+                messageOrderList += `• ${item.name} x ${item.qty} = Rs ${item.price * item.qty}
+`;
+            });
+
+            const message = `*NEW ORDER – THE CHILL SPOT*
+
+*Name:* ${fullName}
+*Roll No:* ${rollNo}
+*Department:* ${dept}
+*WhatsApp:* ${whatsappNum}
+
+*Order Summary:*
+${messageOrderList}
+*Total Bill:* Rs ${total.toLocaleString()}
+
+*Payment Status:* Paid via QR Code
+*Order Ref:* #${orderId}
+
+Thank you for choosing *The Chill Spot*!
+See you at the Gala`;
+
+
+            // Show Thank You Note
+            document.getElementById('thankYouMessage').style.display = 'block';
+            document.getElementById('orderForm').style.display = 'none';
+
+            // Show POS Invoice
+            document.getElementById('inv-name').innerHTML = `<strong>Customer:</strong> ${fullName}`;
+            document.getElementById('inv-roll').innerText = `Roll No: ${rollNo}`;
+            document.getElementById('inv-dept').innerText = `Dept: ${dept}`;
+            document.getElementById('inv-total').innerText = "Rs " + total.toLocaleString();
+            document.getElementById('orderId').innerText = orderId;
+            document.getElementById('invoiceDate').innerText = "Date: " + new Date().toLocaleDateString();
+
+            const itemsTable = document.getElementById('invoiceItems');
+            itemsTable.innerHTML = '';
+            cart.forEach(item => {
+                itemsTable.innerHTML += `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>${item.price} Rs</td>
+                        <td>${item.qty}</td>
+                        <td>${item.price * item.qty} Rs</td>
+                    </tr>`;
+            });
+
+            document.getElementById('invoiceSection').style.color = '#000'; // Ensure visible
+            document.getElementById('invoiceSection').style.display = 'block';
+
+            // Redirect to WhatsApp
+            const adminNumber = "923022993010"; // without +
+            const whatsappURL = "https://wa.me/" + adminNumber + "?text=" + encodeURIComponent(message);
+
+            setTimeout(() => {
+                window.open(whatsappURL, '_blank');
+            }, 1500);
+        });
+
+        function resetOrder() {
+            cart = [];
+            updateTotal();
+            updateLivePOS();
+            document.getElementById('orderForm').reset();
+            document.getElementById('orderForm').style.display = 'block';
+            document.getElementById('thankYouMessage').style.display = 'none';
+            document.getElementById('invoiceSection').style.display = 'none';
+            window.scrollTo({ top: document.getElementById('services').offsetTop, behavior: 'smooth' });
+        }
+
+        // Slogan Typewriter Logic
+        const sloganElement = document.getElementById('sloganText');
+        const phrases = ["CHILL HARDER", "LAUGH LOUDER"];
+
+        async function typePhrases(element, phrases, delay = 100, wait = 2000) {
+            let i = 0;
+            while (true) {
+                const text = phrases[i];
+                element.classList.add('slogan-typing');
+                for (let j = 0; j <= text.length; j++) {
+                    element.textContent = text.substring(0, j);
+                    await new Promise(r => setTimeout(r, delay));
+                }
+                element.classList.remove('slogan-typing');
+                await new Promise(r => setTimeout(r, wait));
+
+                element.classList.add('slogan-typing');
+                for (let j = text.length; j >= 0; j--) {
+                    element.textContent = text.substring(0, j);
+                    await new Promise(r => setTimeout(r, delay / 2));
+                }
+                element.classList.remove('slogan-typing');
+                await new Promise(r => setTimeout(r, 600));
+
+                i = (i + 1) % phrases.length;
+            }
+        }
+
+        if (sloganElement) {
+            typePhrases(sloganElement, phrases);
+        }
+
+        // Scroll Aware Nav
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>*

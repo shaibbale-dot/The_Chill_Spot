@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meet Our Management – The Chill Spot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0F2854;
+      --ocean: #1C4D8D;
+      --sky: #4988C4;
+      --ice: hsl(194, 54%, 66%);
+      --white: #ffffff;
+      --gold: var(--sky);
+      --shadow: 0 20px 40px rgba(15, 40, 84, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    body {
+      background-color: var(--ice);
+      color: var(--navy);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    nav {
+      position: fixed;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1100px;
+      padding: 8px 30px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 40px;
+      border: 2px solid var(--white);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+      z-index: 1000;
+      transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+
+    nav.scrolled {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: #ddd;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    nav.scrolled .nav-logo {
+      border-color: #000;
+    }
+
+    nav.scrolled a {
+      color: #000;
+    }
+
+    nav.scrolled .menu-dot {
+      color: #000;
+    }
+
+    .nav-logo {
+      height: 50px;
+      /* Match index.html */
+      object-fit: contain;
+      border: 2px solid var(--white);
+      border-radius: 50%;
+      padding: 5px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .btn {
+      background: var(--gold);
+      padding: 8px 20px;
+      border-radius: 30px;
+      color: #000;
+    }
+
+    .menu-dot {
+      display: none;
+      font-size: 26px;
+      /* Slightly larger for better touch target */
+      cursor: pointer;
+      color: var(--white);
+      /* White color as requested */
+      padding: 5px;
+      z-index: 1001;
+      /* Above everything */
+    }
+
+    /* Remove old span styles */
+
+    #mobileNav {
+      position: fixed;
+      top: 75px;
+      /* Match index.html offset */
+      right: -300px;
+      /* Hidden off-screen */
+      width: 250px;
+      background: #fff;
+      border-radius: 12px 0 0 12px;
+      box-shadow: -10px 10px 30px rgba(0, 0, 0, .2);
+      overflow: hidden;
+      z-index: 999;
+      transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      display: block;
+      /* Override flex */
+      padding-top: 0;
+      /* Reset padding */
+      height: auto;
+      /* Reset height */
+    }
+
+    #mobileNav.active {
+      right: 0;
+    }
+
+    #mobileNav a {
+      display: block;
+      padding: 15px 20px;
+      color: #000;
+      text-decoration: none;
+      border-bottom: 1px solid #eee;
+      transition: background 0.2s;
+      font-weight: 500;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    #mobileNav a:hover {
+      background: #f9f9f9;
+    }
+
+    header {
+      text-align: center;
+      padding: 100px 20px 40px;
+      background: linear-gradient(180deg, var(--white) 0%, var(--ice) 100%);
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+
+    header p {
+      font-size: 1.4rem;
+      color: var(--ocean);
+      font-weight: 400;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .member-section {
+      background: var(--white);
+      border-radius: 40px;
+      padding: 60px;
+      margin-bottom: 100px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .member-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .member-section:nth-child(even) .member-row {
+      flex-direction: row-reverse;
+    }
+
+    .member-content {
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hello-badge {
+      display: inline-block;
+      padding: 10px 22px;
+      background: var(--ocean);
+      color: var(--white);
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+      width: fit-content;
+    }
+
+    .member-name {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: var(--navy);
+      min-height: 1.2em;
+      transition: all 0.4s ease;
+    }
+
+    .member-name span {
+      color: var(--ocean);
+    }
+
+    .member-uni {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--sky);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .member-desc {
+      font-size: 1.2rem;
+      color: var(--navy);
+      text-align: justify;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+
+    /* Section Marquee - Infinity Loop */
+    .section-marquee {
+      width: calc(100% + 120px);
+      margin-left: -60px;
+      background: var(--navy);
+      color: var(--white);
+      padding: 14px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      margin-top: 40px;
+      display: flex;
+    }
+
+    .marquee-text {
+      display: inline-block;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      animation: infinity-scroll 20s linear infinite;
+      padding-right: 50px;
+    }
+
+    @keyframes infinity-scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Standard Circular Image with Pop-out head */
+    .member-image-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      height: 480px;
+      align-items: flex-end;
+    }
+
+    .portrait-wrapper {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      animation: floating 6s ease-in-out infinite;
+    }
+
+    .white-circle {
+      position: absolute;
+      bottom: 0;
+      width: 350px;
+      height: 350px;
+      background: var(--white);
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+      z-index: 1;
+      border: 10px solid var(--sky);
+    }
+
+    .member-img {
+      position: absolute;
+      bottom: 0;
+      width: 110%;
+      height: 120%;
+      /* Pops out of top */
+      object-fit: contain;
+      z-index: 2;
+      filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.2));
+      transition: transform 0.5s ease;
+    }
+
+    @keyframes floating {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    @media (max-width: 968px) {
+
+      .member-row,
+      .member-section:nth-child(even) .member-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+      }
+
+      .member-content {
+        transition: padding 0.2s ease, margin 0.2s ease;
+        /* Fluid layout */
+      }
+
+      .member-desc {
+        margin: 0 auto 20px;
+        transition: transform 0.2s ease-out;
+      }
+
+      .member-name {
+        font-size: 2rem;
+        transition: height 0.2s ease-in-out;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .white-circle {
+        width: 300px;
+        height: 300px;
+      }
+
+      .portrait-wrapper {
+        width: 350px;
+        height: 350px;
+      }
+
+      nav {
+        display: flex;
+        /* Keep visible */
+      }
+
+      nav ul {
+        display: none;
+        /* Hide desktop links */
+      }
+
+      .menu-dot {
+        display: block;
+        /* Show hamburger */
+        font-size: 26px;
+        cursor: pointer;
+        color: var(--white);
+        position: static;
+        box-shadow: none;
+        padding: 0;
+        background: transparent;
+      }
+
+      .member-section {
+        padding: 40px 20px;
+        margin-bottom: 40px;
+      }
+
+      header {
+        padding: 80px 20px 30px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        text-align: center;
+      }
+
+      header p {
+        font-size: 1.1rem;
+        text-align: center;
+      }
+
+
+    }
+
+    /* Typewriter Cursor */
+    .typing::after {
+      content: '|';
+      animation: blink 0.7s infinite;
+      margin-left: 5px;
+      color: var(--sky);
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="mobileNav" class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#services">Services</a>
+    <a href="intro.html">Members</a>
+    <a href="index.html#combo">Deals</a>
+    <a href="https://wa.me/923022993010" target="_blank" style="display: flex; align-items: center; gap: 8px;">
+      <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: #25d366;">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+      </svg> Contact us
+    </a>
+  </div>
+
+  <nav>
+    <a href="index.html"><img src="src/logo.png" alt="Logo" class="nav-logo"></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="intro.html" class="btn">Members</a></li>
+    </ul>
+    <div class="menu-dot" onclick="toggleMenu()">⋮</div>
+  </nav>
+
+  <header>
+    <h1>The Chill Spot</h1>
+    <p>— Our Management Team —</p>
+  </header>
+
+  <div class="container" id="team-container">
+    <!-- Row Injection -->
+  </div>
+
+  <script>
+    const members = [
+      { id: 1, name: "Ali Nawaz", role: "Leader & CEO", desc: "Overseeing the vision and operations of The Chill Spot Lounge. Ensuring a premium experience for every guest with dedication and strategic foresight." },
+      { id: 2, name: "Laiba Javaid", role: "Designer & Incharge", desc: "Crafting the visual identity and managing the daily creative flow. Passionate about aesthetics and detail, ensuring every corner represents our brand's excellence." },
+      { id: 9, name: "Samra Latif", role: "Art and Design", desc: "Elevating the aesthetic appeal of The Chill Spot with visionary art direction. Passionate about creating an immersive environment through creative and sophisticated design choices." },
+      { id: 4, name: "Hammas ", role: "Head of Accounts and Finance", desc: "Meticulously managing financial records and budgeting. Ensuring the business stays sustainable and thriving while maintaining absolute fiscal transparency." },
+      { id: 5, name: "M. Aurangzaib", role: "Sales", desc: "Building client relationships and maximizing lounge bookings. Dedicated to providing top-tier customer service and creating lasting guest connections." },
+      { id: 6, name: "Ikram", role: "Marketing and Advertisements", desc: "Expanding our digital footprint through creative outreach. Spreading the word about the ultimate lounge experience across diverse social platforms." },
+      { id: 7, name: "Uraisa Iftikhar", role: "Marketing and Advertisements", desc: "Focusing on impactful ad campaigns and promotional events. Ensuring we capture the spotlight across all platforms with high-engagement visuals and outreach." },
+      { id: 8, name: "Uqba Iqbal", role: "Accounts and Finance", desc: "Excellence in financial tracking and departmental support. Maintaining the fiscal backbone of The Chill Spot with organized reporting and absolute precision." },
+      { id: 3, name: "Sajal Amjad", role: "Marketing and Advertisements", desc: "Driving growth through strategic advertisements and brand awareness. Connecting The Chill Spot with our community through innovative digital storytelling." }
+    ];
+
+    const container = document.getElementById('team-container');
+
+    members.forEach((member, index) => {
+      const section = document.createElement('div');
+      section.className = 'member-section';
+      section.innerHTML = `
+        <div class="member-row">
+          <div class="member-content">
+            <div class="hello-badge">Hello There!</div>
+            <h1 class="member-name">Hi, I'm <span class="typing-name" data-index="${index}"></span></h1>
+            <p class="member-uni">BS IT Student of University of Science and Technology</p>
+            <p class="member-desc">${member.desc}</p>
+          </div>
+          <div class="member-image-container">
+            <div class="portrait-wrapper">
+              <div class="white-circle"></div>
+              <img src="src/${member.id}.png" class="member-img" alt="${member.name}">
+            </div>
+          </div>
+        </div>
+        <div class="section-marquee">
+          <div class="marquee-text">${member.role} • ${member.role} • ${member.role} • ${member.role} • ${member.role} • ${member.role} • ${member.role} • ${member.role}</div>
+          <div class="marquee-text">${member.role} • ${member.role} • ${member.role} • ${member.role} • ${member.role} • ${member.role} • ${member.role} • ${member.role}</div>
+        </div>
+      `;
+      container.appendChild(section);
+    });
+
+    // Typewriter Logic with smooth transitions
+    async function typeName(element, text, delay = 120, wait = 2500) {
+      while (true) {
+        element.classList.add('typing');
+        for (let i = 0; i <= text.length; i++) {
+          element.textContent = text.substring(0, i);
+          await new Promise(r => setTimeout(r, delay));
+        }
+        element.classList.remove('typing');
+        await new Promise(r => setTimeout(r, wait));
+
+        element.classList.add('typing');
+        for (let i = text.length; i >= 0; i--) {
+          element.textContent = text.substring(0, i);
+          await new Promise(r => setTimeout(r, delay / 2));
+        }
+        element.classList.remove('typing');
+        await new Promise(r => setTimeout(r, 600));
+      }
+    }
+
+    document.querySelectorAll('.typing-name').forEach((el, idx) => {
+      typeName(el, members[idx].name);
+    });
+
+
+
+    // Toggle Mobile Menu
+    function toggleMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.classList.toggle('active');
+    }
+
+    // Close Mobile Menu on exterior click (copied from index.html)
+    document.addEventListener('click', function (e) {
+      const nav = document.getElementById('mobileNav');
+      const dot = document.querySelector('.menu-dot');
+      if (nav && !nav.contains(e.target) && !dot.contains(e.target)) {
+        nav.classList.remove('active');
+      }
+    });
+
+    // Scroll Aware Nav
+    window.addEventListener('scroll', function () {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+  </script>
+</body>
+
+</html>
